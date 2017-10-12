@@ -11,3 +11,5 @@ This repository is from a previous class I took the summer semester of 2017.  Th
   
 For this class we utilized HTML, CSS, Javascript, PHP, JQuery, and AJAX to complete assignments.
 
+### Note: The server-side assignment (5-7) are non-functional on github pages.
+
