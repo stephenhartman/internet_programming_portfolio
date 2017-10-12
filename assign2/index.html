@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Assignment 2</title>
+<meta charset="utf-8"> 
+<meta name="author" content="Stephen Hartman">
+<meta name="description" content="COP 4813 ePortfolio" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../styles.css"/>
+<link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+<script type="text/javascript">
+function execute()
+{
+	if ((checkInput(document.madlib.answer1.value) && checkInput(document.madlib.answer2.value) && checkInput(document.madlib.answer3.value) && checkInput(document.madlib.answer4.value)) > 0)
+	{
+		document.madlib.results.value = message();
+	}	
+	else
+	{
+		document.madlib.results.value = "Please fill in the fields above to play the game.";
+	}
+}
+function checkInput(stringIn)
+{
+	var invalidChars ="~`!#$%^&*+=-[]\\\';,/{}|\":<>?"; //invalid characters
+		if(stringIn.length < 1)
+		{
+			return 0;
+		}
+		for (var i = 0; i < stringIn.length; i++) 
+		{
+			if (invalidChars.indexOf(stringIn.charAt(i)) != -1) 
+			{
+           			document.madlib.results.value= "File name has special characters ~`!#$%^&*+=-[]\\\';,/{}|\":<>? \nThese are not allowed\n";
+           		return 0;
+    		}
+		return 1;
+	}
+}
+function message()
+{
+	var msg = document.madlib.answer1.value + "!  Playing this game is way more fun than squishing " + document.madlib.answer2.value + " with my bare " + document.madlib.answer3.value + ".  I don't even have to take a hot " + document.madlib.answer4.value + " afterward!";
+	var dropdown = document.getElementById("fundropdown");
+	if (dropdown.value == "yes")
+	{
+		msg += "  Wow that was fun!"
+	}
+	else if (dropdown.value == "maybe")
+	{
+		msg += "  If you make changes to the fields and options you might have more fun!"
+	}
+	else
+	{
+		msg+= "  Lighten up, it's just a game!"
+	}
+	if (document.getElementById("profession1").checked)
+	{
+		msg += "  If this were a 16 week course this form would probably be more fun."
+	}
+	else 
+	{
+		msg += "  Thanks for playing!"
+	}
+	if (document.madlib.red.checked && document.madlib.blue.checked && document.madlib.yellow.checked)
+	{
+		document.getElementById("results").style.color = "black";
+		document.getElementById("results").style.background = "white";
+	}
+	else if (document.madlib.red.checked && document.madlib.blue.checked)
+	{
+		document.getElementById("results").style.color = "purple";
+		document.getElementById("results").style.background = "white";
+	}
+	else if (document.madlib.yellow.checked && document.madlib.blue.checked)
+	{
+		document.getElementById("results").style.color = "green";
+		document.getElementById("results").style.background = "white";
+	}
+	else if (document.madlib.red.checked && document.madlib.yellow.checked)
+	{
+		document.getElementById("results").style.color = "orange";
+		document.getElementById("results").style.background = "white";
+	}
+	else if (document.madlib.red.checked)
+	{
+		document.getElementById("results").style.color = "red";
+		document.getElementById("results").style.background = "white";
+	}
+	else if (document.madlib.blue.checked)
+	{
+		document.getElementById("results").style.color = "blue";
+		document.getElementById("results").style.background = "white";
+	}
+	else if (document.madlib.yellow.checked)
+	{
+		document.getElementById("results").style.color = "yellow";
+		document.getElementById("results").style.background = "black";
+	}
+	else
+	{
+		document.getElementById("results").style.color = "black";
+		document.getElementById("results").style.background = "white";
+	}
+	return msg;
+}
+</script>
+</head>
+<body>
+<header>
+<h1>ePortfolio for COP 4813: Internet Programming</h1>
+</header>
+  <h2>HTML Form w/ Javascript: Madlib</h2>
+<nav>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a target ="_blank" title="Flow Chart for assignment 2" href ="../image/assignment2.jpg">Flow Chart</a></li>
+</ul>
+</nav>
+<section>
+<h3 style="text-align:center">Here is a little madlib I threw together for you... I hope you enjoy this exercise!</h3>
+<div class="container">
+<form name ="madlib" action="javascript:execute()">
+<label for="answer1"><strong>Silly Word</label>
+<input type="text" required="required" id="answer1" name="answer1" placeholder="Silly word..">
+<label for="answer2">Plural Noun</label>
+<input type="text" required="required" id="answer2" name="answer2" placeholder="Plural noun..">
+<label for="answer3">Part of the body (Plural)</label>
+<input type="text" required="required" id="answer3" name="answer3" placeholder="Part of the body (plural)..">
+<label for="answer4">Noun</label>
+<input type="text" required="required" id="answer4" name="answer4" placeholder="Noun..">
+<label for="fundropdown">Do you like madlibs?</strong></label>
+<select id="fundropdown" name="fundropdown" required>
+<option selected="selected" value="">Do you like madlibs?</option>
+<option value="yes">I love madlibs!</option>
+<option value="maybe">Do I have to answer this question?</option>
+<option value="no">I don't like games, especially this one.</option>
+</select>
+<h4>What brings you to this website?</h4>
+<input class="spaceout" type="radio" id="profession1" name="profession" value="student" required>I'm a Student
+<input class="spaceout" type="radio" id="profession2" name="profession" value="professor" required>I'm the Professor
+<h4>Add some color to your text results:</h4>
+<input class="spaceout" type="checkbox" id="color1" name="red" value="red">Red
+<input class="spaceout" type="checkbox" id="color2" name="blue" value="blue">Blue
+<input class="spaceout" type="checkbox" id="color3" name="yellow" value="yellow">Yellow
+<br/><br/>
+<hr />
+<br/>
+<label for="results"><strong>Results</strong></label>
+<textarea id="results" name="results" placeholder="Are you ready for this?" style="height:200px"></textarea>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</form>
+</div> 
+<a class ="top" href='#top'>Back to Top</a>
+<footer>&copy; 2017 Stephen Hartman.  All rights reserved.</footer>
+</body>
+</html>

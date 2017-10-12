@@ -1,0 +1,236 @@
+* {
+	font-family: calibri, sans-serif;
+	box-sizing: border-box;
+}
+
+section, article,  img.index, p, nav li {
+	display: inline-block;
+	margin:auto;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	background:url(image/background.png) repeat-x fixed;
+	/* created using https://www.image-maps.com/tools/gradient-background-generator/ */ 
+}
+section {
+	width: 100%;
+	padding: 15px;
+	border: 3px solid #a5bbd4;
+	border-radius: 12.5px;
+}
+article {
+	padding: 15px;
+	border: none;
+	width: 100%;
+}
+header , footer {
+	margin: 10px 0px;
+	background-color: #37618a;
+	color: white;
+	text-align: center;
+	font-size: 150%;
+	padding: 10px;
+	width: 100%;
+}
+footer {
+	text-align: right;
+	font-size: 100%;
+} 
+h1 {
+	font-family: verdana, sans-serif;
+}
+h2 {
+	background-color: #a1a9ac;
+	border-radius: 12.5px;
+	border: 3px solid #37618a;
+	padding: 5px;
+	margin: 5px;
+	font-family: verdana, sans-serif;
+	text-align: center;
+}
+h3 {
+	font-family: verdana, sans-serif;
+	font-size: 130%;
+}
+hr {
+	border: 2px solid #a5bbd4;
+}
+ul {
+	list-style-image: none;
+	list-style-position: outside;
+}
+div.ul {
+	width: 66%;
+	margin: auto;
+}
+nav ul {
+	text-align: center;
+	list-style-type: none;
+  	margin: 0;
+  	padding: 12.5px;
+  	overflow: hidden;
+   	background-color: #707577;
+	border-radius:12.5px;
+}
+nav li {
+	width: 49%;
+}
+nav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 5px ;
+	text-decoration: none;
+	font-size:120%;
+	border:1px black;
+	border-radius:12.5px;
+}
+
+nav li a.active{
+	background-color: #a5bbd4;
+	color:white;
+}
+
+nav li a:hover {
+	background-color: #37618a;
+	color:white;
+	text-decoration: none;
+}
+nav li a:active {
+	background-color: #c4c4c4;
+	color: white;
+}
+table {
+	font-family: Trebuchet MS, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	background-color: #707577;
+	color: white;
+}
+th, td {
+	border-bottom: 2px solid #37618a;
+	padding: 12.5px;
+}
+tr:hover {background-color: #a5bbd4}
+tr:nth-child(even) {background-color: #f2f2f2}
+img.index:hover {
+    border: 3px solid #37618a;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+img.index {
+	width: 47%;
+	border: 3px solid #a5bbd4; 
+	border-radius: 12.5px; 
+	padding: 12.5px; 
+	margin: 12.5px 0px 12.5px 12.5px;
+	vertical-align: middle;
+	}
+p.index {
+	width: 66%;
+	display: block;
+	margin: auto;
+}
+p { 
+	background-color: #37618a;
+	color: white;
+	border-radius: 12.5px;
+	vertical-align: middle;
+	text-indent: 12.5px;
+	margin: 10px 0px 10px 10px;
+	font-size:110%;
+	width: 47%;
+	height: 100%;
+	left: 12.5px;
+	padding: 10px;
+	font-family: calibri, sans-serif;
+}
+a.top {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 12.5px 25px;
+	text-decoration: none;
+	font-size: 120%;
+	background-color: #A1A9AC;
+}
+input[type=text], input[type=password], input[type=number], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px; 
+}
+input[type=submit], input[type=reset], input[type=button], .linkbutton {
+	background-color: #707577;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 15%;
+}
+input[type=submit]:hover, input[type=reset]:hover, .linkbutton:hover, input[type=button]:hover {
+	background-color: #37618A;
+}
+.container, .container-fluid {
+	margin: auto;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+.left {
+	width: 64%;
+	float: left;
+	overflow: hidden;
+}
+.right {
+	margin-left: 67%;
+	overflow: hidden;
+}
+.spaceout {
+	margin: 0px 5px 0px 30px;
+} 
+.validation {
+	border:3px solid #a5bbd4; 
+	border-radius: 12.5px;
+}
+
+canvas {
+	background-color: transparent;
+}
+
+.assign4 {
+	background-color: #707577;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 15%;
+}
+
+button.assign4:hover {
+	background-color: #37618A;
+}
+
+.homelink {
+	width:12%
+}
+
+span.anchor {
+	margin: 0px; 
+	padding: 0px;
+	border: none;
+	width: 100%; 
+	height: 100%;
+}

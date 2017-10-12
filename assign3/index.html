@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Assignment 3</title>
+<meta charset="utf-8"> 
+<meta name="author" content="Stephen Hartman">
+<meta name="description" content="COP 4813 ePortfolio" >
+<link rel="stylesheet" href="../styles.css"/>
+<link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+<script type="text/javascript" rel="javascript" src="statistics.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+function calculate(){
+	var numbers = document.statistics.inputbox.value;
+	var array = [];
+	for (i = 0; i < numbers.length; i++){
+		numbers = numbers.replace(/\,/g,"");	
+		array =  numbers.split(" ");
+	}
+	for (i = 0; i < array.length; i++){
+		array[i] = parseInt(array[i]);
+	}
+	document.statistics.number.value = findN(array);
+	document.statistics.sum.value = findSum(array);
+	document.statistics.mean.value = findMean(array).toFixed(2);
+	document.statistics.median.value = findMedian(array).toFixed(2);
+	document.statistics.mode.value = findMode(array);
+	document.statistics.variance.value = findVariance(array).toFixed(2);
+	document.statistics.deviation.value = findStandardDeviation(array).toFixed(2);
+}
+</script>
+</head>
+<body>
+<header>
+<h1>ePortfolio for COP 4813: Internet Programming</h1>
+</header>
+  <h2>Statistics Calculator</h2>
+<nav>
+<ul>
+<li><a href="../index.html">Home</a></li>
+</ul>
+</nav>
+<section>
+<h3 style="text-align:center">Enter a set of numbers into the textbox at the top for various statistics</h3>
+<div class="container" style="width:75%">
+<div class="left">
+<form name ="statistics" action="javascript:calculate()">
+<label for="inputbox">Enter a set of numbers:</label>
+<input type="text" id="inputbox" name="inputbox" placeholder="Enter a set of numbers:">
+<label for="number">Number</label>
+<input type="text" id="number" name="results" placeholder="Number:" style="height:43px">
+<label for="sum">Sum</label>
+<input type="text" id="sum" name="results" placeholder="Sum:" style="height:43px">
+<label for="mean">Mean</label>
+<input type="text" id="mean" name="results" placeholder="Mean:" style="height:43px">
+<label for="median">Median</label>
+<input type="text" id="median" name="results" placeholder="Median:" style="height:43px">
+<label for="mode">Mode</label>
+<input type="text" id="mode" name="results" placeholder="Mode:" style="height:43px">
+<label for="variance">Variance</label>
+<input type="text" id="variance" name="results" placeholder="Variance:" style="height:43px">
+<label for="deviation">Standard Deviation</label>
+<input type="text" id="deviation" name="results" placeholder="Standard Deviation:" style="height:43px">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</form>
+</div>
+<div class="right">
+<h4 style="font-size:125%; text-align:center">Unit Testing</h4>
+<table class="validation">
+	<tr>
+		<th>Data Validation</th>
+		<th>Dataset 1</th>
+		<th>Dataset 2</th>
+		<th>Dataset 3</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td>1 2 3 4 5 6 6 7 7 8 9 10 11</td>
+		<td>42 54 65 47 59 40 53 110</td>
+		<td>1 1 2 3 5 8 13 21 34 55 89 144 233 377 610</td>
+	</tr>
+	<tr>
+		<td>Number</td>
+		<td>13</td>
+		<td>8</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>Sum</td>
+		<td>79</td>
+		<td>470</td>
+		<td>1596</td>
+	</tr>
+	<tr>
+		<td>Mean</td>
+		<td>6.08</td>
+		<td>58.75</td>
+		<td>106.40</td>
+	</tr>
+	<tr>
+		<td>Median</td>
+		<td>6.00</td>
+		<td>53.50</td>
+		<td>21.00</td>
+	</tr>
+	<tr>
+		<td>Mode</td>
+		<td>6,7</td>
+		<td>42 54 65 47 59 40 53 110</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>Variance</td>
+		<td>9.24</td>
+		<td>498.79</td>
+		<td>30875.40</td>
+	</tr>
+	<tr>
+		<td>Variance</td>
+		<td>3.04</td>
+		<td>22.33</td>
+		<td>175.71</td>
+	</tr>
+</table>
+<br/><br/><br/><br/><br/>
+</div>
+</div>
+</section> 
+<a class ="top" href='#top'>Back to Top</a>
+<footer>&copy; 2017 Stephen Hartman.  All rights reserved.</footer>
+</body>
+</html>
